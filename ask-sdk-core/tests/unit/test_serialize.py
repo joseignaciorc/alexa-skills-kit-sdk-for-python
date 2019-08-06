@@ -205,6 +205,13 @@ class TestDeserialization(unittest.TestCase):
             test_payload, test_obj_type) is None, \
             "Default Serializer deserialized None object incorrectly"
 
+    def test_empty_string_deserialization(self):
+        test_payload = ""
+        test_obj_type = str
+        assert self.test_serializer.deserialize(
+            test_payload, test_obj_type) == "", \
+            "Default Serializer deserialized empty string object incorrectly"
+
     def test_str_obj_deserialization(self):
         test_payload = "test"
         test_obj_type = str

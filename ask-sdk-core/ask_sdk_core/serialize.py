@@ -160,6 +160,9 @@ class DefaultSerializer(Serializer):
         if payload is None:
             return None
 
+        if payload is "":
+            return ""
+
         try:
             payload = json.loads(payload)
         except Exception:
